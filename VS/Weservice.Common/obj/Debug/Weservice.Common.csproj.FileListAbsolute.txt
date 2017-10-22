@@ -1,0 +1,6 @@
+D:\QR\WeService\Weservice.Common\bin\Debug\Weservice.Common.dll
+D:\QR\WeService\Weservice.Common\bin\Debug\Weservice.Common.pdb
+D:\QR\WeService\Weservice.Common\bin\Debug\log4net.dll
+D:\QR\WeService\Weservice.Common\bin\Debug\log4net.xml
+D:\QR\WeService\Weservice.Common\obj\Debug\Weservice.Common.dll
+D:\QR\WeService\Weservice.Common\obj\Debug\Weservice.Common.pdb

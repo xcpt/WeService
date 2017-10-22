@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WeserviceModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityType Name="dt_wx_token">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="info_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="last_time" Type="DateTime" Precision="3" />
+    <Property Name="expires_in" Type="Int32" />
+    <Property Name="appid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="token" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="WeserviceEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="dt_wx_token" EntityType="Self.dt_wx_token" />
+  </EntityContainer>
+</Schema>

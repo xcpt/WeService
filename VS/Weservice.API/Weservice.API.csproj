@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D9EE530C-FFD2-45DA-B4AF-2CA4586EF67F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Weservice.API</RootNamespace>
+    <AssemblyName>Weservice.API</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Payment\alipaypc\AlipayConfig.cs" />
+    <Compile Include="Payment\alipaypc\AlipayCore.cs" />
+    <Compile Include="Payment\alipaypc\AlipayNotify.cs" />
+    <Compile Include="Payment\alipaypc\AlipayService.cs" />
+    <Compile Include="Payment\alipaypc\AlipaySubmit.cs" />
+    <Compile Include="Payment\chinabankpc\Config.cs" />
+    <Compile Include="Payment\chinabankpc\Service.cs" />
+    <Compile Include="Payment\tenpaypc\ClientResponseHandler.cs" />
+    <Compile Include="Payment\tenpaypc\MD5Util.cs" />
+    <Compile Include="Payment\tenpaypc\RequestHandler.cs" />
+    <Compile Include="Payment\tenpaypc\ResponseHandler.cs" />
+    <Compile Include="Payment\tenpaypc\TenpayHttpClient.cs" />
+    <Compile Include="Payment\tenpaypc\TenpayUtil.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Weservice.BLL\Weservice.BLL.csproj">
+      <Project>{73366def-cd64-45bf-b887-c37ea39be824}</Project>
+      <Name>Weservice.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Weservice.Common\Weservice.Common.csproj">
+      <Project>{408686e7-0249-4899-85e0-77aca8f9f07f}</Project>
+      <Name>Weservice.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Weservice.Model\Weservice.Model.csproj">
+      <Project>{2bbc90cb-5d42-4f0f-bf96-4da42f4ddb39}</Project>
+      <Name>Weservice.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

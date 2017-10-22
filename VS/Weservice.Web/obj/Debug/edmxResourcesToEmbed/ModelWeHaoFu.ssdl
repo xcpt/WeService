@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WeserviceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="dt_wx_token">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="info_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="last_time" Type="datetime" />
+    <Property Name="expires_in" Type="int" />
+    <Property Name="appid" Type="nvarchar" MaxLength="50" />
+    <Property Name="token" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityContainer Name="WeserviceModelStoreContainer">
+    <EntitySet Name="dt_wx_token" EntityType="Self.dt_wx_token" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

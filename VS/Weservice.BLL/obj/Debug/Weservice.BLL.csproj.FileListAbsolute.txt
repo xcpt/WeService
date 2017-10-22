@@ -1,0 +1,16 @@
+D:\QR\WeService\Weservice.BLL\obj\Debug\Weservice.BLL.csprojResolveAssemblyReference.cache
+D:\QR\WeService\Weservice.BLL\bin\Debug\Weservice.BLL.dll.config
+D:\QR\WeService\Weservice.BLL\bin\Debug\Weservice.BLL.dll
+D:\QR\WeService\Weservice.BLL\bin\Debug\Weservice.BLL.pdb
+D:\QR\WeService\Weservice.BLL\bin\Debug\Weservice.Common.dll
+D:\QR\WeService\Weservice.BLL\bin\Debug\Weservice.DAL.dll
+D:\QR\WeService\Weservice.BLL\bin\Debug\Weservice.Model.dll
+D:\QR\WeService\Weservice.BLL\bin\Debug\log4net.dll
+D:\QR\WeService\Weservice.BLL\bin\Debug\Weservice.DBUtility.dll
+D:\QR\WeService\Weservice.BLL\bin\Debug\Weservice.Common.pdb
+D:\QR\WeService\Weservice.BLL\bin\Debug\Weservice.DAL.pdb
+D:\QR\WeService\Weservice.BLL\bin\Debug\Weservice.Model.pdb
+D:\QR\WeService\Weservice.BLL\bin\Debug\log4net.xml
+D:\QR\WeService\Weservice.BLL\bin\Debug\Weservice.DBUtility.pdb
+D:\QR\WeService\Weservice.BLL\obj\Debug\Weservice.BLL.dll
+D:\QR\WeService\Weservice.BLL\obj\Debug\Weservice.BLL.pdb

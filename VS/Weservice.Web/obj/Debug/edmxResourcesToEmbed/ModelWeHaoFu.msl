@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WeserviceModelStoreContainer" CdmEntityContainer="WeserviceEntities">
+    <EntitySetMapping Name="dt_wx_token">
+      <EntityTypeMapping TypeName="WeserviceModel.dt_wx_token">
+        <MappingFragment StoreEntitySet="dt_wx_token">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="info_type" ColumnName="info_type" />
+          <ScalarProperty Name="last_time" ColumnName="last_time" />
+          <ScalarProperty Name="expires_in" ColumnName="expires_in" />
+          <ScalarProperty Name="appid" ColumnName="appid" />
+          <ScalarProperty Name="token" ColumnName="token" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,9 @@
+D:\QR\WeService\Weservice.DBUtility\obj\Debug\Weservice.DBUtility.csprojResolveAssemblyReference.cache
+D:\QR\WeService\Weservice.DBUtility\bin\Debug\Weservice.DBUtility.dll
+D:\QR\WeService\Weservice.DBUtility\bin\Debug\Weservice.DBUtility.pdb
+D:\QR\WeService\Weservice.DBUtility\bin\Debug\Weservice.Common.dll
+D:\QR\WeService\Weservice.DBUtility\bin\Debug\log4net.dll
+D:\QR\WeService\Weservice.DBUtility\bin\Debug\Weservice.Common.pdb
+D:\QR\WeService\Weservice.DBUtility\bin\Debug\log4net.xml
+D:\QR\WeService\Weservice.DBUtility\obj\Debug\Weservice.DBUtility.dll
+D:\QR\WeService\Weservice.DBUtility\obj\Debug\Weservice.DBUtility.pdb
