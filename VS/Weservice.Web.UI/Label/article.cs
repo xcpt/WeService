@@ -171,16 +171,7 @@ namespace Weservice.Web.UI
             return dt;
         }
 
-        /// <summary>
-        /// 文章Tags标签列表
-        /// </summary>
-        /// <param name="top">显示条数</param>
-        /// <param name="strwhere">查询条件</param>
-        /// <returns>DataTable</returns>
-        protected DataTable get_article_tags(int top, string strwhere)
-        {
-            return new BLL.article_tags().GetList(top, strwhere, "count desc").Tables[0];
-        }
+ 
         #endregion
 
         #region 内容标签======================================

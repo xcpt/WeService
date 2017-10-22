@@ -46,8 +46,6 @@
     <Compile Include="article_attribute_field.cs" />
     <Compile Include="article_category.cs" />
     <Compile Include="article_comment.cs" />
-    <Compile Include="article_tags.cs" />
-    <Compile Include="express.cs" />
     <Compile Include="mail_template.cs" />
     <Compile Include="manager.cs" />
     <Compile Include="manager_log.cs" />

@@ -283,7 +283,7 @@ namespace Weservice.BLL
             model.title = dt.Rows[0]["title"].ToString();
             model.img_url = dt.Rows[0]["img_url"].ToString();
             model.zhaiyao = dt.Rows[0]["zhaiyao"].ToString();
-            model.content = dt.Rows[0]["content"].ToString();
+ 
             return model;
         }
         #endregion

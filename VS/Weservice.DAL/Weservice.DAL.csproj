@@ -46,7 +46,6 @@
     <Compile Include="article_attribute_field.cs" />
     <Compile Include="article_category.cs" />
     <Compile Include="article_comment.cs" />
-    <Compile Include="article_tags.cs" />
     <Compile Include="manager.cs" />
     <Compile Include="manager_log.cs" />
     <Compile Include="manager_role.cs" />
@@ -62,7 +61,6 @@
     <Compile Include="user_groups.cs" />
     <Compile Include="user_group_price.cs" />
     <Compile Include="user_message.cs" />
-    <Compile Include="express.cs" />
     <Compile Include="mail_template.cs" />
     <Compile Include="navigation.cs" />
     <Compile Include="oauth_app.cs" />

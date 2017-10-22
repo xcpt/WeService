@@ -103,15 +103,6 @@ namespace Weservice.Web.admin.article {
         protected global::System.Web.UI.WebControls.Label div_sub_title_tip;
         
         /// <summary>
-        /// txtTags 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTags;
-        
-        /// <summary>
         /// txtImgUrl 控件。
         /// </summary>
         /// <remarks>
@@ -364,24 +355,6 @@ namespace Weservice.Web.admin.article {
         protected global::System.Web.UI.WebControls.Repeater rptAlbumList;
         
         /// <summary>
-        /// div_attach_container 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_attach_container;
-        
-        /// <summary>
-        /// rptAttachList 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptAttachList;
-        
-        /// <summary>
         /// field_tab_content 控件。
         /// </summary>
         /// <remarks>
@@ -488,15 +461,6 @@ namespace Weservice.Web.admin.article {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtZhaiyao;
-        
-        /// <summary>
-        /// txtContent 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtContent;
         
         /// <summary>
         /// btnSubmit 控件。

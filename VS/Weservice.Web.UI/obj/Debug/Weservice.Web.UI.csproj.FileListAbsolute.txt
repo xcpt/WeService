@@ -1,4 +1,3 @@
-D:\QR\WeService\Weservice.Web.UI\obj\Debug\Weservice.Web.UI.csprojResolveAssemblyReference.cache
 D:\QR\WeService\Weservice.Web.UI\bin\Debug\Weservice.Web.UI.dll
 D:\QR\WeService\Weservice.Web.UI\bin\Debug\Weservice.Web.UI.pdb
 D:\QR\WeService\Weservice.Web.UI\bin\Debug\Weservice.API.dll
@@ -16,5 +15,6 @@ D:\QR\WeService\Weservice.Web.UI\bin\Debug\Weservice.DBUtility.pdb
 D:\QR\WeService\Weservice.Web.UI\bin\Debug\Weservice.Model.pdb
 D:\QR\WeService\Weservice.Web.UI\bin\Debug\Weservice.DAL.pdb
 D:\QR\WeService\Weservice.Web.UI\bin\Debug\log4net.xml
+D:\QR\WeService\Weservice.Web.UI\obj\Debug\Weservice.Web.UI.csprojResolveAssemblyReference.cache
 D:\QR\WeService\Weservice.Web.UI\obj\Debug\Weservice.Web.UI.dll
 D:\QR\WeService\Weservice.Web.UI\obj\Debug\Weservice.Web.UI.pdb

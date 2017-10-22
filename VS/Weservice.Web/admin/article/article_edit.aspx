@@ -166,9 +166,6 @@
         <asp:CheckBoxList ID="cblItem" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
         <asp:ListItem Value="1">允许评论</asp:ListItem>
         <asp:ListItem Value="1">置顶</asp:ListItem>
-        <asp:ListItem Value="1">推荐</asp:ListItem>
-        <asp:ListItem Value="1">热门</asp:ListItem>
-        <asp:ListItem Value="1">幻灯片</asp:ListItem>
         </asp:CheckBoxList>
       </div>
     </dd>
@@ -185,13 +182,6 @@
     <dd>
       <asp:TextBox ID="field_control_sub_title" runat="server" CssClass="input normal" datatype="*0-255" sucmsg=" " />
       <asp:Label ID="div_sub_title_tip" runat="server" CssClass="Validform_checktip" />
-    </dd>
-  </dl>
-  <dl>
-    <dt>Tags标签</dt>
-    <dd>
-      <asp:TextBox ID="txtTags" runat="server" CssClass="input normal" datatype="*0-500" sucmsg=" " />
-      <span class="Validform_checktip">多个可用英文逗号分隔开，如：a,b</span>
     </dd>
   </dl>
   <dl>
@@ -310,32 +300,6 @@
       </div>
     </dd>
   </dl>
-  <dl ID="div_attach_container" runat="server" visible="false">
-    <dt>上传附件</dt>
-    <dd>
-      <a class="icon-btn attach-btn"><i class="iconfont icon-add"></i><span>添加附件</span></a>
-      <div id="showAttachList" class="attach-list">
-        <ul>
-          <asp:Repeater ID="rptAttachList" runat="server">
-            <ItemTemplate>
-              <li>
-                <input name="hid_attach_id" type="hidden" value="<%#Eval("id")%>" />
-                <input name="hid_attach_filename" type="hidden" value="<%#Eval("file_name")%>" />
-                <input name="hid_attach_filepath" type="hidden" value="<%#Eval("file_path")%>" />
-                <input name="hid_attach_filesize" type="hidden" value="<%#Eval("file_size")%>" />
-                <i class="iconfont icon-attachment"></i>
-                <a href="javascript:;" onclick="delAttachNode(this);" class="del" title="删除附件"><i class="iconfont icon-remove"></i></a>
-                <a href="javascript:;" onclick="showAttachDialog(this);" class="edit" title="更新附件"><i class="iconfont icon-pencil"></i></a>
-                <div class="title"><%#Eval("file_name")%></div>
-                <div class="info">类型：<span class="ext"><%#Eval("file_ext")%></span> 大小：<span class="size"><%#Convert.ToInt32(Eval("file_size")) > 1024 ? Convert.ToDouble((Convert.ToDouble(Eval("file_size")) / 1024f)).ToString("0.0") + "MB" : Eval("file_size") + "KB"%></span> 下载：<span class="down"><%#Eval("down_num")%></span>次</div>
-                <div class="btns">下载积分：<input type="text" name="txt_attach_point" onkeydown="return checkNumber(event);" value="<%#Eval("point")%>" /></div>
-              </li>
-            </ItemTemplate>
-          </asp:Repeater>
-        </ul>
-      </div>
-    </dd>
-  </dl>
 </div>
 
 <div id="field_tab_content" runat="server" visible="false" class="tab-content" style="display:none"></div>
@@ -374,12 +338,6 @@
     <dd>
       <asp:TextBox ID="txtZhaiyao" runat="server" CssClass="input" TextMode="MultiLine" datatype="*0-255" sucmsg=" "></asp:TextBox>
       <span class="Validform_checktip">不填写则自动截取内容前255字符</span>
-    </dd>
-  </dl>
-  <dl>
-    <dt>内容描述</dt>
-    <dd>
-      <textarea id="txtContent" class="editor" runat="server"></textarea>
     </dd>
   </dl>
 </div>

@@ -1786,12 +1786,7 @@ namespace Weservice.Web.tools
                 context.Response.Write("{\"status\":0, \"msg\":\"对不起，请选择支付方式！\"}");
                 return;
             }
-            Model.express expModel = new BLL.express().GetModel(express_id);
-            if (expModel == null)
-            {
-                context.Response.Write("{\"status\":0, \"msg\":\"对不起，配送方式不存在或已删除！\"}");
-                return;
-            }
+ 
             //检查支付方式
             Model.payment payModel = new BLL.payment().GetModel(payment_id);
             if (payModel == null)
@@ -1875,7 +1870,7 @@ namespace Weservice.Web.tools
             model.payable_amount = goodsTotal.payable_amount;
             model.real_amount = goodsTotal.real_amount;
             model.express_status = 1;
-            model.express_fee = expModel.express_fee; //物流费用
+             
             //是否先款后货
             if (payModel.type == 1)
             {

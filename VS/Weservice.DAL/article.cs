@@ -130,19 +130,7 @@ namespace Weservice.DAL
                         }
                         #endregion
 
-                        #region 添加Tags标签====================
-                        if (model.tags != null && model.tags.Trim().Length > 0)
-                        {
-                            string[] tagsArr = model.tags.Trim().Split(',');
-                            if (tagsArr.Length > 0)
-                            {
-                                foreach (string tagsStr in tagsArr)
-                                {
-                                    new DAL.article_tags(databaseprefix).Update(conn, trans, tagsStr, model.channel_id, model.id);
-                                }
-                            }
-                        }
-                        #endregion
+                     
 
                         trans.Commit();
                     }
@@ -230,22 +218,7 @@ namespace Weservice.DAL
                         }
                         #endregion
 
-                        #region 修改Tags标签==========================
-                        //删除已有的Tags标签关系
-                        new DAL.article_tags(databaseprefix).Delete(conn, trans, model.channel_id, model.id);
-                        //添加添加标签
-                        if (model.tags != null && model.tags.Trim().Length > 0)
-                        {
-                            string[] tagsArr = model.tags.Trim().Split(',');
-                            if (tagsArr.Length > 0)
-                            {
-                                foreach (string tagsStr in tagsArr)
-                                {
-                                    new DAL.article_tags(databaseprefix).Update(conn, trans, tagsStr, model.channel_id, model.id);
-                                }
-                            }
-                        }
-                        #endregion
+                    
 
                         trans.Commit();
                     }

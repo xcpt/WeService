@@ -22,7 +22,6 @@ namespace Weservice.Model
         private string _img_url = string.Empty;
         private string _tags = string.Empty;
         private string _zhaiyao = string.Empty;
-        private string _content;
         private int _sort_id = 99;
         private int _click = 0;
         private int _status = 0;
@@ -114,14 +113,6 @@ namespace Weservice.Model
         {
             set { _zhaiyao = value; }
             get { return _zhaiyao; }
-        }
-        /// <summary>
-        /// 详细内容
-        /// </summary>
-        public string content
-        {
-            set { _content = value; }
-            get { return _content; }
         }
         /// <summary>
         /// 排序

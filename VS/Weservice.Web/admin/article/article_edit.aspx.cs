@@ -317,10 +317,7 @@ namespace Weservice.Web.admin.article
             {
                 div_albums_container.Visible = true;
             }
-            if (channelModel.is_attach == 1)
-            {
-                div_attach_container.Visible = true;
-            }
+ 
         }
         #endregion
 
@@ -384,7 +381,6 @@ namespace Weservice.Web.admin.article
             ddlCategoryId.SelectedValue = model.category_id.ToString();
             txtCallIndex.Text = model.call_index;
             txtTitle.Text = model.title;
-            txtTags.Text = model.tags;
             txtLinkUrl.Text = model.link_url;
             //不是相册图片就绑定
             string filename = model.img_url.Substring(model.img_url.LastIndexOf("/") + 1);
@@ -394,7 +390,6 @@ namespace Weservice.Web.admin.article
             }
  
             txtZhaiyao.Text = model.zhaiyao;
-            txtContent.Value = model.content;
             txtSortId.Text = model.sort_id.ToString();
             txtClick.Text = model.click.ToString();
             if (model.status == 2)
@@ -503,9 +498,7 @@ namespace Weservice.Web.admin.article
             }
             rptAlbumList.DataSource = model.albums;
             rptAlbumList.DataBind();
-            //绑定内容附件
-            rptAttachList.DataSource = model.attach;
-            rptAttachList.DataBind();
+ 
             //赋值用户组价格
             if (model.group_price != null)
             {
@@ -614,21 +607,11 @@ namespace Weservice.Web.admin.article
             model.category_id = Utils.StrToInt(ddlCategoryId.SelectedValue, 0);
             model.call_index = txtCallIndex.Text.Trim();
             model.title = txtTitle.Text.Trim();
-            model.tags = txtTags.Text.Trim();
+ 
             model.link_url = txtLinkUrl.Text.Trim();
             model.img_url = txtImgUrl.Text;
  
-            //内容摘要提取内容前255个字符
-            if (string.IsNullOrEmpty(txtZhaiyao.Text.Trim()))
-            {
-                model.zhaiyao = Utils.DropHTML(txtContent.Value, 250);
-            }
-            else
-            {
-                model.zhaiyao = Utils.DropHTML(txtZhaiyao.Text, 250);
-            }
-            
-            model.content = txtContent.Value;
+  
             model.sort_id = Utils.StrToInt(txtSortId.Text.Trim(), 99);
             model.click = int.Parse(txtClick.Text.Trim());
             model.is_msg = 0;
@@ -686,26 +669,6 @@ namespace Weservice.Web.admin.article
             }
             #endregion
 
-            #region 保存附件====================
-            //保存附件
-            string[] attachFileNameArr = Request.Form.GetValues("hid_attach_filename");
-            string[] attachFilePathArr = Request.Form.GetValues("hid_attach_filepath");
-            string[] attachFileSizeArr = Request.Form.GetValues("hid_attach_filesize");
-            string[] attachPointArr = Request.Form.GetValues("txt_attach_point");
-            if (attachFileNameArr != null && attachFilePathArr != null && attachFileSizeArr != null && attachPointArr != null
-                && attachFileNameArr.Length > 0 && attachFilePathArr.Length > 0 && attachFileSizeArr.Length > 0 && attachPointArr.Length > 0)
-            {
-                List<Model.article_attach> ls = new List<Model.article_attach>();
-                for (int i = 0; i < attachFileNameArr.Length; i++)
-                {
-                    int fileSize = Utils.StrToInt(attachFileSizeArr[i], 0);
-                    string fileExt = FileHelper.GetFileExt(attachFilePathArr[i]);
-                    int _point = Utils.StrToInt(attachPointArr[i], 0);
-                    ls.Add(new Model.article_attach { channel_id = this.channel_id, file_name = attachFileNameArr[i], file_path = attachFilePathArr[i], file_size = fileSize, file_ext = fileExt, point = _point });
-                }
-                model.attach = ls;
-            }
-            #endregion
 
             #region 保存会员组价格==============
             List<Model.user_group_price> priceList = new List<Model.user_group_price>();
@@ -740,21 +703,11 @@ namespace Weservice.Web.admin.article
             model.category_id = Utils.StrToInt(ddlCategoryId.SelectedValue, 0);
             model.call_index = txtCallIndex.Text.Trim();
             model.title = txtTitle.Text.Trim();
-            model.tags = txtTags.Text.Trim();
+ 
             model.link_url = txtLinkUrl.Text.Trim();
             model.img_url = txtImgUrl.Text;
  
-            //内容摘要提取内容前255个字符
-            if (string.IsNullOrEmpty(txtZhaiyao.Text.Trim()))
-            {
-                model.zhaiyao = Utils.DropHTML(txtContent.Value, 250);
-            }
-            else
-            {
-                model.zhaiyao = Utils.DropHTML(txtZhaiyao.Text, 250);
-            }
-            
-            model.content = txtContent.Value;
+ 
             model.sort_id = Utils.StrToInt(txtSortId.Text.Trim(), 99);
             model.click = int.Parse(txtClick.Text.Trim());
             model.is_msg = 0;
@@ -816,31 +769,7 @@ namespace Weservice.Web.admin.article
             }
             #endregion
 
-            #region 保存附件====================
-            if (model.attach != null)
-            {
-                model.attach.Clear();
-            }
-            string[] attachIdArr = Request.Form.GetValues("hid_attach_id");
-            string[] attachFileNameArr = Request.Form.GetValues("hid_attach_filename");
-            string[] attachFilePathArr = Request.Form.GetValues("hid_attach_filepath");
-            string[] attachFileSizeArr = Request.Form.GetValues("hid_attach_filesize");
-            string[] attachPointArr = Request.Form.GetValues("txt_attach_point");
-            if (attachIdArr != null && attachFileNameArr != null && attachFilePathArr != null && attachFileSizeArr != null && attachPointArr != null
-                && attachIdArr.Length > 0 && attachFileNameArr.Length > 0 && attachFilePathArr.Length > 0 && attachFileSizeArr.Length > 0 && attachPointArr.Length > 0)
-            {
-                List<Model.article_attach> ls = new List<Model.article_attach>();
-                for (int i = 0; i < attachFileNameArr.Length; i++)
-                {
-                    int attachId = Utils.StrToInt(attachIdArr[i], 0);
-                    int fileSize = Utils.StrToInt(attachFileSizeArr[i], 0);
-                    string fileExt = FileHelper.GetFileExt(attachFilePathArr[i]);
-                    int _point = Utils.StrToInt(attachPointArr[i], 0);
-                    ls.Add(new Model.article_attach { id = attachId, channel_id = this.channel_id, article_id = _id, file_name = attachFileNameArr[i], file_path = attachFilePathArr[i], file_size = fileSize, file_ext = fileExt, point = _point, });
-                }
-                model.attach = ls;
-            }
-            #endregion
+          
 
             #region 保存会员组价格==============
             List<Model.user_group_price> priceList = new List<Model.user_group_price>();
