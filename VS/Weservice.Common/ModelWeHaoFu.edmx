@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WeserviceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="dt_wx_auth_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="authorizer_appid" Type="nvarchar" MaxLength="50" />
+          <Property Name="authorizer_access_token" Type="nvarchar" MaxLength="500" />
+          <Property Name="expires_in" Type="int" />
+          <Property Name="authorizer_refresh_token" Type="nvarchar" MaxLength="500" />
+          <Property Name="func_info" Type="nvarchar" MaxLength="2000" />
+          <Property Name="last_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="dt_wx_token">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="info_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="last_time" Type="datetime" />
+          <Property Name="expires_in" Type="int" />
+          <Property Name="appid" Type="nvarchar" MaxLength="50" />
+          <Property Name="token" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityContainer Name="WeserviceModelStoreContainer">
+          <EntitySet Name="dt_wx_auth_info" EntityType="Self.dt_wx_auth_info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_wx_token" EntityType="Self.dt_wx_token" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WeserviceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="dt_wx_auth_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="authorizer_appid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="authorizer_access_token" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="expires_in" Type="Int32" />
+          <Property Name="authorizer_refresh_token" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="func_info" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="last_time" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="dt_wx_token">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="info_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="last_time" Type="DateTime" Precision="3" />
+          <Property Name="expires_in" Type="Int32" />
+          <Property Name="appid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="token" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="WeserviceEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="dt_wx_auth_info" EntityType="Self.dt_wx_auth_info" />
+          <EntitySet Name="dt_wx_token" EntityType="Self.dt_wx_token" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WeserviceModelStoreContainer" CdmEntityContainer="WeserviceEntities">
+          <EntitySetMapping Name="dt_wx_auth_info">
+            <EntityTypeMapping TypeName="WeserviceModel.dt_wx_auth_info">
+              <MappingFragment StoreEntitySet="dt_wx_auth_info">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="authorizer_appid" ColumnName="authorizer_appid" />
+                <ScalarProperty Name="authorizer_access_token" ColumnName="authorizer_access_token" />
+                <ScalarProperty Name="expires_in" ColumnName="expires_in" />
+                <ScalarProperty Name="authorizer_refresh_token" ColumnName="authorizer_refresh_token" />
+                <ScalarProperty Name="func_info" ColumnName="func_info" />
+                <ScalarProperty Name="last_time" ColumnName="last_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_wx_token">
+            <EntityTypeMapping TypeName="WeserviceModel.dt_wx_token">
+              <MappingFragment StoreEntitySet="dt_wx_token">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="info_type" ColumnName="info_type" />
+                <ScalarProperty Name="last_time" ColumnName="last_time" />
+                <ScalarProperty Name="expires_in" ColumnName="expires_in" />
+                <ScalarProperty Name="appid" ColumnName="appid" />
+                <ScalarProperty Name="token" ColumnName="token" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
